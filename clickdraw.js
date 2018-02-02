@@ -19,7 +19,7 @@ var drawShape = function(e){
   ctx.beginPath();
   if(shape == 0){
     console.log("Circle!");
-    ctx.arc(e.offsetX - 10, e.offsetY - 10, 20, 0, 2 * Math.PI);
+    ctx.arc(e.offsetX - 5, e.offsetY - 5, 20, 0, 2 * Math.PI);
     ctx.fill();
   }
   else{
