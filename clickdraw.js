@@ -3,7 +3,6 @@ var c = document.getElementById("slate");
 //instantiate a CanvasRenderingContext2D object
 var ctx = c.getContext("2d");
 console.log(ctx);
-ctx.strokeStyle = "#ADFF2F"
 //Assign the buttons to variables
 var clr = document.getElementById("clear");
 var tgl = document.getElementById('toggle');
@@ -47,6 +46,7 @@ var drawShape = function(e){
   ctx.beginPath(); //Begin a new path
   if(shape == 0){ //0 is circle
     ctx.fillStyle = "#DA70D6"; 
+    ctx.strokeStyle = "#ADFF2F"
     ctx.moveTo(oldX, oldY);
     ctx.lineTo(x, y);
     ctx.stroke();
@@ -54,6 +54,7 @@ var drawShape = function(e){
   }
   else{
     ctx.fillStyle = "#9C2A00";
+    ctx.strokeStyle = "#4682b4"
     ctx.moveTo(oldX, oldY);
     ctx.lineTo(x, y);
     ctx.stroke();
@@ -68,6 +69,8 @@ c.addEventListener("click", drawShape); //Add the eventlistener to our context
 //Function to clear our canvas
 var clear = function(e){
   ctx.clearRect(0,0,600, 600); //Make a rectangle spanning our entire canvas to be cleared
+  oldX = -1;
+  oldY = -1;
 }
 
 //Add an eventlistener to our clear button!!
